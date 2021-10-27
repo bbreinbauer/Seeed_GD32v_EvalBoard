@@ -15,7 +15,9 @@
 // ##################################################################################
 
 // Only define one driver, the other ones must be commented out
-//#define ILI9341_DRIVER
+// Note (breb): This driver selection is just to prevent compile errors,
+//              actually no LCD driver is used.
+#define ILI9341_DRIVER
 //#define ST7735_DRIVER      // Define additional parameters below for this display
 //#define ILI9163_DRIVER     // Define additional parameters below for this display
 //#define S6D02A1_DRIVER
@@ -47,11 +49,11 @@
 // For ST7789, ST7735 and ILI9163 ONLY, define the pixel width and height in portrait orientation
 // #define TFT_WIDTH  80
 // #define TFT_WIDTH  128
-// #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
+#define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
 // #define TFT_HEIGHT 160
 // #define TFT_HEIGHT 128
 // #define TFT_HEIGHT 240 // ST7789 240 x 240
-// #define TFT_HEIGHT 320 // ST7789 240 x 320
+#define TFT_HEIGHT 320 // ST7789 240 x 320
 
 // For ST7735 ONLY, define the type of display, originally this was based on the
 // colour of the tab on the screen protector film but this is not always true, so try
@@ -158,13 +160,13 @@
 #define LTDC_DRIVER
 #define LTDC_BUFFER_ADDRESS 0x90000000
 #else
-#error "you need to config in USer_Setup.h"
+// #error "you need to config in USer_Setup.h"
 #endif
 
 //For GD32
-// #define TFT_RST PE1
-// #define TFT_BL PD12
-// #define TFT_BACKLIGHT_ON LOW
+#define TFT_RST PE1
+#define TFT_BL PD12
+#define TFT_BACKLIGHT_ON LOW
 
 // ##################################################################################
 //
