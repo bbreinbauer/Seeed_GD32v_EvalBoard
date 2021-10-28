@@ -2,22 +2,28 @@
 #include <SPI.h>
 #include <TFT_eSPI.h> // Hardware-specific library
 
-TFT_eSPI tft = TFT_eSPI();       // Invoke custom library
+TFT_eSPI tft = TFT_eSPI(); // Invoke custom library
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
   // initialize LED digital pin as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(PB1, OUTPUT);
 
-
+  tft.init();
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextColor(TFT_YELLOW);
+  tft.setTextSize(2);
+  tft.setCursor(8, 20);
+  tft.print(F("Jipieieh!"));
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
 
-
-    // turn the LED on (HIGH is the voltage level)
+  // turn the LED on (HIGH is the voltage level)
   digitalWrite(LED_BUILTIN, HIGH);
   digitalWrite(PB1, HIGH);
   // wait for a second
@@ -27,5 +33,4 @@ void loop() {
   digitalWrite(PB1, LOW);
   // wait for a second
   delay(1000);
-
 }
