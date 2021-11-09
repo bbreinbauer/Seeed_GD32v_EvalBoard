@@ -1,6 +1,7 @@
 
 //#include <SPI.h>
 #include <TFT_eSPI.h> // Hardware-specific library
+#include "tft_test.h"
 
 TFT_eSPI tft = TFT_eSPI(); // Invoke custom library
 
@@ -22,7 +23,9 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
+  static int loopCnt = 0;
 
+  loopCnt++;
   // turn the LED on (HIGH is the voltage level)
   digitalWrite(LED_BUILTIN, HIGH);
   digitalWrite(PB1, HIGH);
@@ -33,4 +36,9 @@ void loop()
   digitalWrite(PB1, LOW);
   // wait for a second
   delay(1000);
+
+  if (loopCnt % 5 == 0) {
+    tftTest(tft);
+    delay(30*1000);
+  }
 }
