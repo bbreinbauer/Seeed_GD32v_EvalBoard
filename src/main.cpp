@@ -1,5 +1,5 @@
 
-#include <SPI.h>
+//#include <SPI.h>
 #include <TFT_eSPI.h> // Hardware-specific library
 
 TFT_eSPI tft = TFT_eSPI(); // Invoke custom library
@@ -16,7 +16,7 @@ void setup()
   tft.setTextColor(TFT_YELLOW);
   tft.setTextSize(2);
   tft.setCursor(8, 20);
-  tft.print(F("Jipieieh!"));
+  tft.print("Jipieieh!");
 }
 
 void loop()
