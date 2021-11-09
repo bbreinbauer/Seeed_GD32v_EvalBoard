@@ -12,6 +12,7 @@
 
 #include "tft_test.h"
 
+#define TEST_DELAY	1000
 
 void printnice(TFT_eSPI &tft, int32_t v)
 {
@@ -542,72 +543,72 @@ void tftTest(TFT_eSPI &tft)
 	uint32_t usecHaD = testHaD(tft);
 	Serial.print(F("HaD pushColor            "));
 	Serial.println(usecHaD);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecFillScreen = testFillScreen(tft);
 	Serial.print(F("Screen fill              "));
 	Serial.println(usecFillScreen);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecText = testText(tft);
 	Serial.print(F("Text                     "));
 	Serial.println(usecText);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecPixels = testPixels(tft);
 	Serial.print(F("Pixels                   "));
 	Serial.println(usecPixels);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecLines = testLines(tft, TFT_BLUE);
 	Serial.print(F("Lines                    "));
 	Serial.println(usecLines);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecFastLines = testFastLines(tft, TFT_RED, TFT_BLUE);
 	Serial.print(F("Horiz/Vert Lines         "));
 	Serial.println(usecFastLines);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecRects = testRects(tft, TFT_GREEN);
 	Serial.print(F("Rectangles (outline)     "));
 	Serial.println(usecRects);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecFilledRects = testFilledRects(tft, TFT_YELLOW, TFT_MAGENTA);
 	Serial.print(F("Rectangles (filled)      "));
 	Serial.println(usecFilledRects);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecFilledCircles = testFilledCircles(tft, 10, TFT_MAGENTA);
 	Serial.print(F("Circles (filled)         "));
 	Serial.println(usecFilledCircles);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecCircles = testCircles(tft, 10, TFT_WHITE);
 	Serial.print(F("Circles (outline)        "));
 	Serial.println(usecCircles);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecTriangles = testTriangles(tft);
 	Serial.print(F("Triangles (outline)      "));
 	Serial.println(usecTriangles);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecFilledTrangles = testFilledTriangles(tft);
 	Serial.print(F("Triangles (filled)       "));
 	Serial.println(usecFilledTrangles);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usecRoundRects = testRoundRects(tft);
 	Serial.print(F("Rounded rects (outline)  "));
 	Serial.println(usecRoundRects);
-	delay(100);
+	delay(TEST_DELAY);
 
 	uint32_t usedFilledRoundRects = testFilledRoundRects(tft);
 	Serial.print(F("Rounded rects (filled)   "));
 	Serial.println(usedFilledRoundRects);
-	delay(100);
+	delay(TEST_DELAY);
 
 	Serial.println(F("Done!"));
 
