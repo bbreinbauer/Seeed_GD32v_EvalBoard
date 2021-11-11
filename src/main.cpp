@@ -17,19 +17,31 @@ void setup()
   tft.fillScreen(TFT_BLACK);
   tft.setTextColor(TFT_YELLOW);
   tft.setTextSize(2);
-  tft.setCursor(8, 20);
+  tft.setCursor(8, 200);
   tft.print("Jipieieh!");
 
+  // reading info registers, but content does not make any sense
+  int misa = 0, mvendorid = 0, marchid = 0;
+  asm volatile("csrr x0, misa" : "=r"(misa));
+  asm volatile("csrr x0, mvendorid" : "=r"(mvendorid));
+  asm volatile("csrr x0, marchid" : "=r"(marchid));
+  tft.setCursor(0, 9);
+  tft.print(misa, HEX);
+  tft.setCursor(0, 30);
+  tft.print(mvendorid, HEX);
+  tft.setCursor(0, 60);
+  tft.print(marchid, HEX);
+
   // LCD functions(240 x 320)
-  tft.fillCircle(50, 50, 20, TFT_DARKGREEN);
-  tft.drawCircle(100, 50, 20, TFT_DARKGREEN);
+  // tft.fillCircle(50, 50, 20, TFT_DARKGREEN);
+  // tft.drawCircle(100, 50, 20, TFT_DARKGREEN);
 
-  tft.fillRect(50, 100, 40, 20, TFT_DARKGREY);
-  tft.drawRect(100, 100, 40, 20, TFT_DARKGREY);
-  tft.fillRoundRect(150, 100, 40, 20, 5, TFT_DARKGREY);
+  // tft.fillRect(50, 100, 40, 20, TFT_DARKGREY);
+  // tft.drawRect(100, 100, 40, 20, TFT_DARKGREY);
+  // tft.fillRoundRect(150, 100, 40, 20, 5, TFT_DARKGREY);
 
-  tft.fillTriangle(50, 200, 20, 240, 80, 240, TFT_ORANGE);
-  tft.drawTriangle(100, 200, 70, 240, 130, 240, TFT_ORANGE);
+  // tft.fillTriangle(50, 200, 20, 240, 80, 240, TFT_ORANGE);
+  // tft.drawTriangle(100, 200, 70, 240, 130, 240, TFT_ORANGE);
 }
 
 void loop()
@@ -50,11 +62,11 @@ void loop()
   delay(1000);
 
   if (loopCnt % 3 == 0) {
-    testDial(tft);
+    // testDial(tft);
     // delay(10*1000);
   }
   if (loopCnt % 5 == 0) {
-    tftTest(tft);
-    delay(30*1000);
-  }
+  //   tftTest(tft);
+  //   delay(30*1000);
+   }
 }
