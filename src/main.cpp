@@ -2,6 +2,7 @@
 //#include <SPI.h>
 #include <TFT_eSPI.h> // Hardware-specific library
 #include "tft_test.h"
+#include "test_dial.h"
 
 TFT_eSPI tft = TFT_eSPI(); // Invoke custom library
 
@@ -48,6 +49,10 @@ void loop()
   // wait for a second
   delay(1000);
 
+  if (loopCnt % 3 == 0) {
+    testDial(tft);
+    // delay(10*1000);
+  }
   if (loopCnt % 5 == 0) {
     tftTest(tft);
     delay(30*1000);

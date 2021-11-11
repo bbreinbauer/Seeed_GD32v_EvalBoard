@@ -222,7 +222,7 @@ uint32_t testText(TFT_eSPI &tft)
 	tft.setTextSize(6);
 	tft.println(F("Woot!"));
 	uint32_t t = micros() - start;
-	delay(1000);
+	delay(2000);
 	return t;
 }
 
