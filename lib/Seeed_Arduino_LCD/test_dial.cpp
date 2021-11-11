@@ -296,4 +296,5 @@ void testDial(TFT_eSPI &tft) {
         //Serial.println(millis()-t); // Print time taken for meter update
     }
   }
+  tft.setRotation(0);
 }
