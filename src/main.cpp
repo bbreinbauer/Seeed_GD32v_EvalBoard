@@ -18,6 +18,17 @@ void setup()
   tft.setTextSize(2);
   tft.setCursor(8, 20);
   tft.print("Jipieieh!");
+
+  // LCD functions(240 x 320)
+  tft.fillCircle(50, 50, 20, TFT_DARKGREEN);
+  tft.drawCircle(100, 50, 20, TFT_DARKGREEN);
+
+  tft.fillRect(50, 100, 40, 20, TFT_DARKGREY);
+  tft.drawRect(100, 100, 40, 20, TFT_DARKGREY);
+  tft.fillRoundRect(150, 100, 40, 20, 5, TFT_DARKGREY);
+
+  tft.fillTriangle(50, 200, 20, 240, 80, 240, TFT_ORANGE);
+  tft.drawTriangle(100, 200, 70, 240, 130, 240, TFT_ORANGE);
 }
 
 void loop()
